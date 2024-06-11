@@ -9,7 +9,7 @@ public class LearningTasksApplication {
     public static void main(String[] args) {
         SpringApplication.run(LearningTasksApplication.class, args);
         FizzBuzz fizzBuzz = new FizzBuzz();
-        fizzBuzz.fizzBuzzz();
+        fizzBuzz.fizzzBuzz();
     }
 
 }
