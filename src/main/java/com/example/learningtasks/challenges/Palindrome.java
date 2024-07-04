@@ -1,4 +1,4 @@
-package com.example.learningtasks;
+package com.example.learningtasks.challenges;
 
 public class Palindrome {
     public boolean isPalindrome(String str) {

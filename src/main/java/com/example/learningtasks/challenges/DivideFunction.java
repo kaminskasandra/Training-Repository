@@ -1,4 +1,4 @@
-package com.example.learningtasks;
+package com.example.learningtasks.challenges;
 
 import java.util.ArrayList;
 import java.util.List;

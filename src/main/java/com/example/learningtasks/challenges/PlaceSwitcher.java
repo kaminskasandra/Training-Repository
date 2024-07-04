@@ -1,4 +1,4 @@
-package com.example.learningtasks;
+package com.example.learningtasks.challenges;
 
 public class PlaceSwitcher {
 
