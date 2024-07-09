@@ -1,6 +1,6 @@
 package com.example.learningtasks;
 
-import com.example.learningtasks.challenges.Palindrome;
+import com.example.learningtasks.challenges.TimeDifference;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
@@ -9,9 +9,7 @@ public class LearningTasksApplication {
 
     public static void main(String[] args) {
         SpringApplication.run(LearningTasksApplication.class, args);
-        Palindrome palindrome = new Palindrome();
-        boolean result = palindrome.isPalindrome("kajak");
-        System.out.println(result);
+        long minutesBetween = TimeDifference.calculateMinutes("11:00am", "8:00pm");
+        System.out.println("Liczba minut: " + minutesBetween);
     }
-
 }
