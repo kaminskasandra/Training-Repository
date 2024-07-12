@@ -1,6 +1,6 @@
 package com.example.learningtasks;
 
-import com.example.learningtasks.challenges.TimeDifference;
+import com.example.learningtasks.challenges.MorseCodeTranslator;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
@@ -9,7 +9,10 @@ public class LearningTasksApplication {
 
     public static void main(String[] args) {
         SpringApplication.run(LearningTasksApplication.class, args);
-        long minutesBetween = TimeDifference.calculateMinutes("11:00am", "8:00pm");
-        System.out.println("Liczba minut: " + minutesBetween);
+        MorseCodeTranslator translator = new MorseCodeTranslator();
+        String text = "JAVA TEST";
+        String morseCode = translator.translateToMorse(text);
+        System.out.println("Text: " + text);
+        System.out.println("Morse Code: " + morseCode);
     }
 }
