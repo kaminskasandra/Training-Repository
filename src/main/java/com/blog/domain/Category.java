@@ -16,7 +16,7 @@ public class Category {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "CATEGORY_ID")
-    private int commentId;
+    private int categoryId;
 
     @Column(name = "CATEGORY_NAME")
     private String name;
