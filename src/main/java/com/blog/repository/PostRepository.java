@@ -11,5 +11,5 @@ import java.util.List;
 @Repository
 @Transactional
 public interface PostRepository extends JpaRepository<Post, Long> {
-    List<Post> getPostsByUser(User user);
+    List<Post> findAllByUser(User user);
 }
