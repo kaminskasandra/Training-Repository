@@ -15,7 +15,7 @@ public class Post {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "POST_ID")
-    private int postId;
+    private long postId;
 
     @Column(name = "POST_CONTENT")
     private String postContent;
