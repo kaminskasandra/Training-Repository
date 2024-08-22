@@ -41,6 +41,11 @@ public class UserService {
                 .collect(Collectors.toList());
     }
 
+    public User findByMail(String mail) throws UserNotFoundException {
+        return userRepository.findByMail(mail)
+                .orElseThrow(() -> new UserNotFoundException(String.format("User with email %s not found", mail)));
+    }
+
     public User getUser(final Long userId) throws UserNotFoundException {
         if (!userRepository.existsById(userId)) {
             throw new UserNotFoundException("User with id %s not found");
