@@ -40,7 +40,7 @@ public class CommentService {
                 .collect(Collectors.toList());
     }
 
-    public Comment getComment(final Long commentId) throws CommentNotFoundException {
+    public Comment getCommentById(final Long commentId) throws CommentNotFoundException {
         if (!commentRepository.existsById(commentId)) {
             throw new CommentNotFoundException("Comment with id %s not found");
         } else {
