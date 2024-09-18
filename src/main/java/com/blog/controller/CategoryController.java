@@ -1,6 +1,7 @@
 package com.blog.controller;
 
 import com.blog.dto.CategoryDto;
+import com.blog.dto.CommentDto;
 import com.blog.exceptions.CategoryNotFoundException;
 import com.blog.exceptions.CommentNotFoundException;
 import com.blog.service.CategoryService;
@@ -9,6 +10,9 @@ import org.modelmapper.ModelMapper;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
+import java.util.stream.Collectors;
 
 @RestController
 @RequiredArgsConstructor
@@ -27,5 +31,13 @@ public class CategoryController {
     public ResponseEntity<Void> deleteCategory(@PathVariable long categoryId) throws CategoryNotFoundException {
         categoryService.deleteCategoryById(categoryId);
         return ResponseEntity.ok().build();
+    }
+
+    @GetMapping()
+    public List<CategoryDto> findAll() {
+        List<CategoryDto> categories = categoryService.getAllCategories();
+        return categories.stream()
+                .map(category -> modelMapper.map(category, CategoryDto.class))
+                .collect(Collectors.toList());
     }
 }
