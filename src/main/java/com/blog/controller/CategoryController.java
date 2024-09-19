@@ -40,4 +40,9 @@ public class CategoryController {
                 .map(category -> modelMapper.map(category, CategoryDto.class))
                 .collect(Collectors.toList());
     }
+
+    @GetMapping(value = "/{categoryId}")
+    public ResponseEntity<CategoryDto> getCategoryById(@PathVariable long categoryId) throws CategoryNotFoundException {
+        return ResponseEntity.ok(modelMapper.map(categoryService.getCategory(categoryId), CategoryDto.class));
+    }
 }
