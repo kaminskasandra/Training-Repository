@@ -1,9 +1,7 @@
 package com.blog.controller;
 
 import com.blog.dto.CategoryDto;
-import com.blog.dto.CommentDto;
 import com.blog.exceptions.CategoryNotFoundException;
-import com.blog.exceptions.CommentNotFoundException;
 import com.blog.service.CategoryService;
 import lombok.RequiredArgsConstructor;
 import org.modelmapper.ModelMapper;
@@ -44,5 +42,10 @@ public class CategoryController {
     @GetMapping(value = "/{categoryId}")
     public ResponseEntity<CategoryDto> getCategoryById(@PathVariable long categoryId) throws CategoryNotFoundException {
         return ResponseEntity.ok(modelMapper.map(categoryService.getCategory(categoryId), CategoryDto.class));
+    }
+
+    @PutMapping(value = "/{categoryId}", consumes = MediaType.APPLICATION_JSON_VALUE)
+    public ResponseEntity<CategoryDto> updateCategory(@RequestBody CategoryDto categoryDto, @PathVariable long categoryId) throws CategoryNotFoundException {
+        return ResponseEntity.ok(modelMapper.map(categoryService.updateCategory(categoryDto, categoryId), CategoryDto.class));
     }
 }
