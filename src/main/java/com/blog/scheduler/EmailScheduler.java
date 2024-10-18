@@ -27,10 +27,5 @@ public class EmailScheduler {
     @Scheduled(cron = "0 0 7 * * *")
     @Transactional
     public void sendInformationEmail() throws UserNotFoundException {
-        HashMap<String, List<Post>> mailToSend = new HashMap<>();
-        for (UserDto user : userService.getAllUsers()) {
-            List<Post> appointments = new ArrayList<>();
-
-        }
     }
 }
