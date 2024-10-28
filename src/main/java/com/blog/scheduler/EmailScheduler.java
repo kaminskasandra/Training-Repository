@@ -19,7 +19,7 @@ import java.util.List;
 @Component
 @RequiredArgsConstructor
 public class EmailScheduler {
-    private static final String SUBJECT = "Reminder about new posts";
+    private static final String SUBJECT = "Reminder about new comments in your posts";
     private final UserService userService;
     private final MailService mailService;
     private final PostService postService;
